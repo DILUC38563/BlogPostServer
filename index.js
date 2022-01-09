@@ -29,7 +29,9 @@ mongoose
     })
   )
   .catch((error) => console.log(error.message));
-app.get("hello")
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
 app.use("/auth", authRoute);
 app.use("/users", userRoute);
 app.use("/posts", postRoute);
